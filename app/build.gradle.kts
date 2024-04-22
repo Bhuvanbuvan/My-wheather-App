@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp").version("1.6.10-1.0.4")
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -66,4 +69,20 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.10.0")
+    //moshi
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.retrofit2:converter-moshi:2.10.0")
+    //moshi ksp
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
+    //kpt
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
+
+
+//livedata
+    implementation("androidx.compose.runtime:runtime-livedata:1.0.0-beta01")
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
 }

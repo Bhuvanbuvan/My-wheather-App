@@ -1,5 +1,8 @@
 package com.appdev.mywheatherapplication.data
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 data class RootModel(
     val base: String,
     val clouds: Clouds,
